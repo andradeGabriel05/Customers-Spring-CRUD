@@ -27,6 +27,34 @@
 			"response": []
 		},
 		{
+			"name": "Create client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gabriel\",\r\n    \"cpf\": \"333.222.111-57\",\r\n    \"income\": \"3000.0\",\r\n    \"birthDate\": \"1998-01-01\",\r\n    \"children\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "getAllClients",
 			"request": {
 				"method": "GET",
