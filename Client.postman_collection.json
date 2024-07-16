@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "4e4b41da-d192-443a-b166-f8c5e73c1315",
+		"name": "Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34678955"
+	},
+	"item": [
+		{
+			"name": "getClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/client/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
