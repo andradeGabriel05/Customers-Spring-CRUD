@@ -16,7 +16,7 @@ public class ClientDTO {
     private String name;
 
     @NotBlank(message = "Field required")
-    @Size(min = 11, max = 14)
+    @Size(min = 14, max = 14, message = "The value of 'cpf' must be 14. for example: '111.222.333-45'")
     private String cpf;
 
     @Positive(message = "Income must be positive")
@@ -46,15 +46,15 @@ public class ClientDTO {
         return id;
     }
 
-    public @NotBlank(message = "Field required") String getName() {
+    public String getName() {
         return name;
     }
 
-    public @NotBlank(message = "Field required") @Size(min = 11, max = 11) String getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public @Positive(message = "Income must be positive") Double getIncome() {
+    public  Double getIncome() {
         return income;
     }
 
