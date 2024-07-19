@@ -3,6 +3,7 @@ package com.andradeGabriel.client.dto;
 
 import com.andradeGabriel.client.entities.Client;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
@@ -21,6 +22,8 @@ public class ClientDTO {
 
     @Positive(message = "Income must be positive")
     private Double income;
+
+    @PastOrPresent(message = "Cannot be a future date.")
     private LocalDate birthDate;
     private Integer children;
 

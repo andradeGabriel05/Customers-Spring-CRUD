@@ -31,17 +31,17 @@ public class ClientController {
 
 
     }
-//
-//    @GetMapping // get all clients in pages
-//    public ResponseEntity<Page<ClientDTO>> getAllClients(Pageable pageable) {
-//        Page<ClientDTO> clientDTO = clientService.getAllClients(pageable);
-//        return ResponseEntity.ok(clientDTO);
-//    }
 
-    @GetMapping // get all clients in a json array
-    public List<ClientDTO> getAllClients() {
-        return clientService.getAllClients();
+    @GetMapping // get all clients in pages
+    public ResponseEntity<Page<ClientDTO>> getAllClients(Pageable pageable) {
+        Page<ClientDTO> clientDTO = clientService.getAllClients(pageable);
+        return ResponseEntity.ok(clientDTO);
     }
+//
+//    @GetMapping // get all clients in a json array
+//    public List<ClientDTO> getAllClients() {
+//        return clientService.getAllClients();
+//    }
 
     @PostMapping
     public ResponseEntity<ClientDTO> createClient(@Valid @RequestBody ClientDTO clientDTO) {
@@ -57,6 +57,18 @@ public class ClientController {
             throw new DatabaseException("Try a new cpf");
         }
 
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ClientDTO> updateClient(@PathVariable final Long id, @Valid @RequestBody ClientDTO clientDTO) {
+            clientDTO = clientService.updateClient(id, clientDTO);
+            return ResponseEntity.ok(clientDTO);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteClient(@PathVariable final Long id) {
+        clientService.deleteClient(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

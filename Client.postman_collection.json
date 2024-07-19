@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/client/2",
+					"raw": "http://localhost:8080/client/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,7 +20,52 @@
 					"port": "8080",
 					"path": [
 						"client",
-						"2"
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllClients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/client?page=0&size=6&sort=name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "6"
+						},
+						{
+							"key": "sort",
+							"value": "name"
+						}
 					]
 				}
 			},
@@ -33,7 +78,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Gabriel\",\r\n    \"cpf\": \"333.222.111-57\",\r\n    \"income\": \"3000.0\",\r\n    \"birthDate\": \"1998-01-01\",\r\n    \"children\": \"\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Gabriel Andrade\",\r\n    \"cpf\": \"312.792.894-13\",\r\n    \"income\": \"3000.0\",\r\n    \"birthDate\": \"1998-01-01\",\r\n    \"children\": \"3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -55,19 +100,49 @@
 			"response": []
 		},
 		{
-			"name": "getAllClients",
+			"name": "Update client",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gabriel\",\r\n    \"cpf\": \"333.222.111-22\",\r\n    \"income\": \"3000.0\",\r\n    \"birthDate\": \"1998-01-01\",\r\n    \"children\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/client",
+					"raw": "http://localhost:8080/client/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"client"
+						"client",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/client/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						"10"
 					]
 				}
 			},
